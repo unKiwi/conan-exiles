@@ -1,0 +1,121 @@
+{
+    "conan_exiles_window_name": "Conan: Exiles",
+    "tesseract_path": "Tesseract-OCR\\tesseract.exe",
+    "inventory_key_bind": "TAB",
+    "bars": {
+        "x": 29,
+        "health_y": 66,
+        "stamina_y": 74,
+        "width": 462
+    },
+    "shield_state": {
+        "image_shield_path": "assets/shield_crop.png",
+        "image_dead_path": "assets/dead_crop.png",
+        "used_sound_path": "assets/avalaible.mp3",
+        "available_sound_path": "assets/avalaible.mp3",
+        "ready_text": "Ready",
+        "ready_color": "#328930",
+        "cool_down_color": "#b40000",
+        "text_x": 270,
+        "text_y": 140,
+        "font_size": 24,
+        "shield_cool_down": 60
+    },
+    "translate_chat": {
+        "translate_key_bind": "t",
+        "hide_translation_key_bind": "alt + 7",
+        "my_lang": "fr",
+        "src_lang": [
+            "ru",
+            "en",
+            "fr",
+            "es",
+            "de"
+        ],
+        "text_color": "#FFFFFF",
+        "font_size": 16,
+        "text_x": 20,
+        "text_y": 620,
+        "region": {
+            "x": 19,
+            "y": 821,
+            "width": 447,
+            "height": 173
+        }
+    },
+    "drop": {
+        "key_bind": "alt + 3",
+        "x": 290,
+        "y": 1016
+    },
+    "raid_detector": {
+        "key_bind": "alt + 2",
+        "text": "destroyed",
+        "interval": 20,
+        "accuracy": 3,
+        "logs_region": {
+            "x": 150,
+            "y": 553,
+            "width": 1599,
+            "height": 337
+        },
+        "submit_pos": {
+            "x": 1752,
+            "y": 937
+        }
+    },
+    "auto_bomb": {
+        "key_bind": "alt + 0",
+        "INVENTORY_REGION": {
+            "x": 74,
+            "y": 225,
+            "width": 356,
+            "height": 427
+        },
+        "ACTIVE_BAR_REGION": {
+            "x": 561,
+            "y": 963,
+            "width": 795,
+            "height": 96
+        },
+        "REFILL_REGION": {
+            "x": 74,
+            "y": 435,
+            "width": 356,
+            "height": 217
+        },
+        "CRAFT_REGION": {
+            "x": 1463,
+            "y": 228,
+            "width": 386,
+            "height": 311
+        },
+        "BOMB_ACTIVE_BAR_IMAGE_PATH": "assets\\bomb_active_bar.png",
+        "BOMB_INVENTORY_IMAGE_PATH": "assets\\bomb_inventory.png",
+        "BOMB_CRAFT_IMAGE_PATH": "assets\\bomb_craft.png",
+        "ACTIVE_BAR_KEY_MAP": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+        ],
+        "INVENTORY_KEY": "tab",
+        "SEARCH_BAR_POS": {
+            "x": 66,
+            "y": 161
+        },
+        "BOMB_NAME": "Explosive Jar",
+        "FIRST_INVENTORY_SLOT_POS":{
+            "x": 108,
+            "y": 256
+        },
+        "CRAFT_POS": {
+            "x": 1716,
+            "y": 766
+        }
+    }
+}
