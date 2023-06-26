@@ -1,4 +1,4 @@
-import secret
+import my_secret
 
 import discord
 from config import config
@@ -40,7 +40,7 @@ def trigger():
 
         await client.guilds[0].channels[0].channels[0].send(file=discord.File(r'last_logs.png'))
 
-    client.run(secret.TOKEN)
+    client.run(my_secret.TOKEN)
 
 def loop_function():
     global loop_running

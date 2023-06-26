@@ -10,7 +10,7 @@ import global_variables
 
 from PyQt5.QtWidgets import QApplication
 
-from auto_bomb import toggle_bomb_loop
+# from auto_bomb import toggle_bomb_loop
 from health_and_stamina import health_and_stamina_loop
 from overlay import Overlay
 from player_pos import player_pos_loop
