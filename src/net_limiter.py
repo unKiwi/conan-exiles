@@ -1,7 +1,7 @@
-from config import INPUT_SPEED_LIMIT, OUTPUT_SPEED_LIMIT
+from src.config import INPUT_SPEED_LIMIT, OUTPUT_SPEED_LIMIT
 import pyshaper
 import keyboard
-from global_variables import network_is_limited
+from repository import network_is_limited
 
 app_name = "nom_de_l_application"
 shaper = pyshaper.TCShaper()

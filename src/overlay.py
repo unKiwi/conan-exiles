@@ -1,6 +1,6 @@
 import pyautogui
-from config import config
-import global_variables
+from src.config import config
+import repository
 import pygetwindow as gw
 
 from PyQt5.QtCore import Qt, QPoint
@@ -24,28 +24,24 @@ class Overlay(QMainWindow):
 
         self.setGeometry(0, 0, pyautogui.size().width, pyautogui.size().height)
 
-        self.paintEvent(self)
-
     def paintEvent(self, event):
-        # if config['conan_exiles_window_name'] not in gw.getActiveWindowTitle():
-        #     return
+        if repository.conan_is_focus == False:
+            return
         
         painter = QPainter(self)
         painter.setRenderHint(QPainter.Antialiasing)
         painter.setFont(QFont("Arial", config["shield_state"]['font_size']))
 
-        painter.begin(self)
-
         # shield
         x = config["shield_state"]['text_x']
         y = config["shield_state"]['text_y']
 
-        if global_variables.shield_cool_down <= 0:
+        if repository.shield_cool_down <= 0:
             painter.setPen(QColor(config["shield_state"]['ready_color']))
             painter.drawText(x, y, config["shield_state"]['ready_text'])
         else:
             painter.setPen(QColor(config["shield_state"]['cool_down_color']))
-            painter.drawText(x, y, str(global_variables.shield_cool_down))
+            painter.drawText(x, y, str(repository.shield_cool_down))
 
         # chat
         x = config["translate_chat"]['text_x']
@@ -55,6 +51,28 @@ class Overlay(QMainWindow):
         rect = QRect(x, y, pyautogui.size().width, pyautogui.size().height)
         align_flags = Qt.AlignLeft | Qt.TextWordWrap
 
-        painter.drawText(rect, align_flags, global_variables.translated_chat)
+        painter.drawText(rect, align_flags, repository.translated_chat)
 
-        painter.end()
+        # on off indicators
+
+        # Définir la police et la taille du texte
+        font = QFont('Arial', 14)
+        painter.setFont(font)
+
+        # Définir la couleur du texte
+        painter.setPen(QColor('white'))
+
+        # Définir les coordonnées x et y du texte en haut à droite
+        text = "Raid detector " + ("ON" if repository.raid_detector_on else 'OFF') + "\nAuto bomb " + ("ON" if repository.auto_bomb_on else 'OFF') + "\nQueue cuter " + ("ON" if repository.queue_cuter_on else 'OFF') + "\nAuto bow " + ("ON" if repository.auto_bow_on else 'OFF')
+
+        # Dessiner le texte à la position spécifiée
+        marge = 8
+        painter.drawText(QRect(0, marge, pyautogui.size().width - marge, pyautogui.size().height), Qt.AlignTop | Qt.AlignRight, text)
+
+        # players info
+        text = ""
+        for player in repository.players:
+            text += player.name + " " + str(player.health) + "%" + "\n"
+
+        marge = 8
+        painter.drawText(QRect(0, 0, pyautogui.size().width - marge, pyautogui.size().height - marge), Qt.AlignBottom | Qt.AlignRight, text)

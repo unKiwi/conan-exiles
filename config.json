@@ -1,12 +1,18 @@
 {
-    "conan_exiles_window_name": "Conan: Exiles",
+    "access_key": "",
+    "conan_exiles_window_name": "onan",
     "tesseract_path": "Tesseract-OCR\\tesseract.exe",
     "inventory_key_bind": "TAB",
+    "online": {
+        "playerName": "Gringo",
+        "roomName": "24"
+    },
     "bars": {
         "x": 29,
-        "health_y": 66,
+        "health_y": 50,
         "stamina_y": 74,
-        "width": 462
+        "width": 462,
+        "height": 16
     },
     "shield_state": {
         "image_shield_path": "assets/shield_crop.png",
@@ -117,5 +123,12 @@
             "x": 1716,
             "y": 766
         }
+    },
+    "queue_cuter": {
+        "key_bind": "alt + 1"
+    },
+    "auto_bow": {
+        "toggle_key_bind": "alt + 5",
+        "slots_key_bind": ["1", "2"]
     }
 }

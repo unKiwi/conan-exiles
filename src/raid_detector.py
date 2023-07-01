@@ -1,7 +1,7 @@
 import my_secret
-
+import repository
 import discord
-from config import config
+from src.config import config
 import pyautogui
 import threading
 import pytesseract
@@ -88,4 +88,5 @@ def toggle_raid_detector_loop():
         loop_thread = threading.Thread(target=loop_function)
         loop_thread.start()
 
-    print(f"Raid detector {loop_running}")
+    repository.raid_detector_on = loop_running
+    repository.overlay_window.update()

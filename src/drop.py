@@ -1,9 +1,9 @@
 import pyautogui
-from config import config
+from src.config import config
 from pynput.mouse import Button, Controller
 from pynput.keyboard import Key, Controller as KeyboardController
 
-from functions.drag_to import drag_to
+from src.functions.drag_to import drag_to
 
 mouse = Controller()
 keyboard = KeyboardController()

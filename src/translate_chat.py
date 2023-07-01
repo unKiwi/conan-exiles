@@ -1,9 +1,9 @@
-from config import config
+from src.config import config
 from googletrans import Translator
 import pyautogui
 import pytesseract
 import langid
-import global_variables
+import repository
 
 pytesseract.pytesseract.tesseract_cmd = config["tesseract_path"]
 langid.set_languages(config["translate_chat"]["src_lang"])
@@ -28,7 +28,7 @@ def translate_chat():
 
     messages = text.split('\n\n')
 
-    global_variables.translated_chat = ""
+    repository.translated_chat = ""
 
     for message in messages:
         name, content = disec_message(message)
@@ -36,14 +36,14 @@ def translate_chat():
         try:
             lang, score = langid.classify(content)
             translation = translator.translate(content, src=lang, dest=config["translate_chat"]['my_lang'])
-            global_variables.translated_chat += lang + " " + name + DELIMITER + translation.text + "\n"
+            repository.translated_chat += lang + " " + name + DELIMITER + translation.text + "\n"
         except:
             a = 1
 
-    print(global_variables.translated_chat)
+    print(repository.translated_chat)
 
-    global_variables.overlay_window.update()
+    repository.overlay_window.update()
 
 def remove_translation():
-    global_variables.translated_chat = ""
-    global_variables.overlay_window.update()
+    repository.translated_chat = ""
+    repository.overlay_window.update()

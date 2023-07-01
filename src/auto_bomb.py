@@ -1,17 +1,17 @@
-# import threading
-# import pyautogui
-# import keyboard
-# import config
+import threading
+import pyautogui
+import keyboard
+import repository
 
-# from pynput.mouse import Button, Controller
-# from pynput.keyboard import Key, Controller as KeyboardController
+from pynput.mouse import Button, Controller
+from pynput.keyboard import Key, Controller as KeyboardController
 
-# # processing
+# processing
 # active_bar_slot_width = config.ACTIVE_BAR_REGION[2] / 8
 
 # nb_bomb_to_craft = 0
 
-# loop_running = False  # Variable d'état pour suivre l'état de la boucle
+loop_running = False  # Variable d'état pour suivre l'état de la boucle
 
 # def place_bomb(index):
 #     global nb_bomb_to_craft
@@ -94,15 +94,15 @@
 #         pyautogui.press(config.ACTIVE_BAR_KEY_MAP[slot_index])
 #         place_bomb(slot_index)
 
-# def toggle_bomb_loop():
-#     global loop_running
+def toggle_bomb_loop():
+    global loop_running
 
-#     if loop_running:
-#         loop_running = False
-#         print("Boucle arrêtée")
-#     else:
-#         loop_running = True
-#         print("Boucle démarrée")
-#         # Créer un thread pour exécuter la boucle
-#         loop_thread = threading.Thread(target=loop_function)
-#         loop_thread.start()
+    # if loop_running:
+    #     loop_running = False
+    # else:
+    #     loop_running = True
+    #     # loop_thread = threading.Thread(target=loop_function)
+    #     # loop_thread.start()
+
+    # repository.auto_bomb_on = loop_running
+    # repository.overlay_window.update()
